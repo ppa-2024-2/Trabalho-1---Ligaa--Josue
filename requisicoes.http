@@ -1,0 +1,125 @@
+##
+
+
+### Novo Aluno
+POST /api/v1/alunos HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "nome": "Josue",
+    "email": "josue@email.com",
+    "cpf": "123456"
+}
+### Novo Aluno 2
+POST /api/v1/alunos HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "nome": "Pedro",
+    "email": "pedro@email.com",
+    "cpf": "321321321"
+}
+
+### GET ALL
+GET /api/v1/alunos HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+### GET Aluno por CPF
+GET /api/v1/alunos/1234567891 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+
+# Professor
+
+### Novo Professor
+POST /api/v1/professores HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "nome": "Marcio",
+    "formacao": "TADS",
+    "ciap": "123456"
+}
+
+### GET ALL
+GET /api/v1/professores HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+
+# Disciplina
+
+### Nova disciplina
+POST /api/v1/disciplinas HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "nome": "PPA",
+    "cargaHoraria": "66h",
+    "ementa": "PPA - EMENTA",
+    "prerequesitos": ["1", "2"],
+    "aulasSemanais": 2
+}
+### Nova disciplina 2
+POST /api/v1/disciplinas HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "nome": "BANCO DE DADOS",
+    "cargaHoraria": "66h",
+    "ementa": "BANCO - EMENTA",
+    "prerequesitos": ["1", "2"],
+    "aulasSemanais": 2
+}
+
+### GET ALL
+GET /api/v1/disciplinas HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+
+# Turma
+
+### Nova Turma
+POST /api/v1/turmas HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "disciplinaId": "1857f372-6a00-4058-99b3-c873182ec8dc",
+    "semestre": "2",
+    "ano": "2024",
+    "sala": "201",
+    "vagas": 30,
+    "periodos" :"Manhã e Noite",
+    "matriculas": []
+}
+
+### GET ALL
+GET /api/v1/turmas HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+### Nova Matricula
+POST /api/v1/matriculas HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "turmaId": "b1e2a8fa-84f2-49bd-a1dd-fd40f4f53ef6",
+    "alunoId": "ef1f4c3f-1a4f-4fe5-a4f9-157e896a95b6",
+    "aprovado": true
+}
+
+
+### GET ALL
+GET /api/v1/matriculas HTTP/1.1
+Host: localhost:8080
+Accept: application/json
